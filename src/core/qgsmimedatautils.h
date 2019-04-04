@@ -40,7 +40,7 @@ class CORE_EXPORT QgsMimeDataUtils
       //! Constructs invalid URI
       Uri() = default;
       //! Constructs URI from encoded data
-      explicit Uri( QString &encData );
+      explicit Uri( const QString &encData );
 
       /**
        * Returns whether the object contains valid data
