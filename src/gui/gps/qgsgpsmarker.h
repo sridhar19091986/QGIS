@@ -33,6 +33,7 @@ class GUI_EXPORT QgsGpsMarker : public QgsMapCanvasItem
     explicit QgsGpsMarker( QgsMapCanvas *mapCanvas );
 
     void setCenter( const QgsPointXY &point );
+    void setDirection( double direction );
 
     void paint( QPainter *p ) override;
 
@@ -48,6 +49,7 @@ class GUI_EXPORT QgsGpsMarker : public QgsMapCanvasItem
     QgsPointXY mCenter;
     //! Size of the marker - e.g. 8 will draw it as 8x8
     int mSize;
+    double mDirection = 0;
 
   private:
     QgsCoordinateReferenceSystem mWgs84CRS;
