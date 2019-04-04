@@ -439,6 +439,26 @@ class CORE_EXPORT QgsMapSettings
      */
     QgsCoordinateTransform layerTransform( const QgsMapLayer *layer ) const;
 
+    /**
+     * \brief Compute the extent such that its center is at the specified
+     * position (mapped to the destinatonCrs) and the zoom factor corresponds
+     * to the specified scale
+     * \param point The center, wrt the sourceCRS
+     * \param scale The desired zoom factor (the x part of 1:x)
+     * \param sourceCrs The source CRS
+     * \return An extent which can be passed to QgsMapCanvas::setExtent
+     * \since QGIS 3.10
+     */
+    QgsRectangle computeExtentForScale( const QgsPointXY &point, double scale, const QgsCoordinateReferenceSystem &sourceCrs ) const;
+
+    /**
+     * \brief Compute the scale that corresponds to the specified extent
+     * \param extent The extent, as passed to QgsMapCanvas::setExtent
+     * \return The scale denominator
+     * \since QGIS 3.10
+     */
+    double computeScaleForExtent( const QgsRectangle &extent ) const;
+
     //! returns current extent of layer set
     QgsRectangle fullExtent() const;
 
