@@ -230,6 +230,11 @@ class CORE_EXPORT QgsDistanceArea
     double bearing( const QgsPointXY &p1, const QgsPointXY &p2 ) const;
 
     /**
+     * compute destination point given start point (in degrees), a distance (in meters), and a bearing for the destination point (in degrees)
+     */
+    QgsPointXY destination( const QgsPointXY &p, double distance, double bearingDeg ) const;
+
+    /**
      * Returns an distance formatted as a friendly string.
      * \param distance distance to format
      * \param decimals number of decimal places to show

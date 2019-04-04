@@ -279,6 +279,11 @@ Measures the area of the polygon described by a set of points.
 Computes the bearing (in radians) between two points.
 %End
 
+    QgsPointXY destination( const QgsPointXY &p, double distance, double bearingDeg ) const;
+%Docstring
+compute destination point given start point (in degrees), a distance (in meters), and a bearing for the destination point (in degrees)
+%End
+
     static QString formatDistance( double distance, int decimals, QgsUnitTypes::DistanceUnit unit, bool keepBaseUnit = false );
 %Docstring
 Returns an distance formatted as a friendly string.
